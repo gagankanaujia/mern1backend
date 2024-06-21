@@ -5,20 +5,15 @@ const cors=require('cors')
 const prodController=require('./controller')
 const bodyParser = require('body-parser');
 const dotenv=require('dotenv')
-//const  formidable = require('express-formidable');
+
 dotenv.config()
 url=process.env.DATABASE
-port=process.env.PORT
+port=process.env.PORT ||   5000
 
 server.use(cors())
 server.use(express.json())
-
-
 server.use(bodyParser.json());
 server.use(express.json());
-
-
-
 
 
 main().catch(err => console.log(err));
